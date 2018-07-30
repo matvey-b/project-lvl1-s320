@@ -9,6 +9,3 @@ publish:
 
 lint:
 	npm run eslint .
-
-prettify:
-	npm run prettier
