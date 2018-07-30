@@ -1,6 +1,6 @@
 {
   "name": "hexlet-brain-games-matvey-b",
-  "version": "0.1.1",
+  "version": "0.2.2",
   "description": "Mini dictionary of CLI games. Aka Brain Games",
   "scripts": {
     "babel-node": "babel-node",
@@ -9,7 +9,8 @@
     "eslint": "eslint"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
