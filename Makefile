@@ -1,4 +1,4 @@
-install: 
+install:
 	npm install
 
 start:
@@ -6,3 +6,9 @@ start:
 
 publish:
 	npm publish
+
+lint:
+	npm run eslint .
+
+prettify:
+	npm run prettier

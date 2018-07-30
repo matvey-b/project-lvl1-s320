@@ -1,39 +1,48 @@
 {
-  "name": "hexlet-brain-games-matvey-b",
-  "version": "0.1.1",
-  "description": "",
-  "main": "dist/bin/brain-games.js",
-  "scripts": {
-    "babel-node": "babel-node",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
-  },
-  "bin": {
-    "brain-games": "dist/bin/brain-games.js"
-  },
-  "files": [
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matvey-b/project-lvl1-s320.git"
-  },
-  "keywords": [
-    "brain-games"
-  ],
-  "author": "Claud D. Park <posquit0.bj@gmail.com> (http://www.posquit0.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/matvey-b/project-lvl1-s320/issues"
-  },
-  "homepage": "https://github.com/matvey-b/project-lvl1-s320#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
-  },
-  "dependencies": {
-    "readline-sync": "^1.4.9"
-  }
+    "name": "hexlet-brain-games-matvey-b",
+    "version": "0.1.1",
+    "description": "",
+    "main": "dist/bin/brain-games.js",
+    "scripts": {
+        "babel-node": "babel-node",
+        "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+        "prepublishOnly": "npm run build",
+        "eslint": "eslint",
+        "prettier": "prettier --write \"*.{js,css,md}\" \"{src}/**/*.{js}\""
+    },
+    "bin": {
+        "brain-games": "dist/bin/brain-games.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/matvey-b/project-lvl1-s320.git"
+    },
+    "keywords": [
+        "brain-games"
+    ],
+    "author": "Claud D. Park <posquit0.bj@gmail.com> (http://www.posquit0.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/matvey-b/project-lvl1-s320/issues"
+    },
+    "homepage": "https://github.com/matvey-b/project-lvl1-s320#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.6",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-stage-0": "^6.24.1",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb-base": "^13.0.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-prettier": "^2.6.2",
+        "prettier": "1.14.0"
+    },
+    "dependencies": {
+        "readline-sync": "^1.4.9"
+    }
 }
