@@ -18,8 +18,8 @@ make start
 make lint
 ```
 
-## Prettify code via prettier
+## Run babel in "watch" mode (aka auto transpiling)
 
 ```
-make prettify
+make watch
 ```
