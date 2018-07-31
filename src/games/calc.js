@@ -1,3 +1,4 @@
+import { getRandomInt } from '../utils';
 
 const description = 'What is the result of the expression?';
 const operations = [
@@ -5,8 +6,6 @@ const operations = [
   { literal: '+', func: (x, y) => x + y },
   { literal: '*', func: (x, y) => x * y },
 ];
-
-const getRandomInt = () => Math.round(Math.random() * 100);
 
 const pickOne = list => list[Math.floor(Math.random() * list.length)];
 
