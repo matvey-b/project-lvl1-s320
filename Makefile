@@ -14,3 +14,6 @@ lint:
 
 watch:
 	npm run watch
+
+test:
+	npm test

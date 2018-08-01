@@ -2,6 +2,7 @@
 
 env:
   node: true
+  mocha: true
 
 extends:
   - 'airbnb-base'
@@ -9,3 +10,5 @@ extends:
 rules:
   'no-console': 0
   'import/prefer-default-export': 0
+  'import/no-extraneous-dependencies':
+    'devDependencies': 0

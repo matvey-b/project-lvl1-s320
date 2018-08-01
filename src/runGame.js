@@ -1,9 +1,14 @@
 import readlineSync from 'readline-sync';
+import calc from './games/calc';
+import even from './games/even';
+import gcdGame from './games/gcd';
+
+const games = { calc, even, gcd: gcdGame };
 
 const countOfQuestions = 3;
 const greeting = 'Welcome to the Brain Games!';
 
-const runGame = (game) => {
+const gameEngine = (game) => {
   console.log(greeting);
   console.log(game.description, '\n');
   const userName = readlineSync.question('May I have your name? ', { defaultInput: 'Human' });
@@ -23,5 +28,7 @@ const runGame = (game) => {
 
   console.log(`Congratulations, ${userName}!`);
 };
+
+const runGame = gameName => gameEngine(games[gameName]);
 
 export default runGame;

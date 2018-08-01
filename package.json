@@ -1,13 +1,14 @@
 {
   "name": "hexlet-brain-games-matvey-b",
-  "version": "0.4.0",
+  "version": "0.4.4",
   "description": "Mini dictionary of CLI games. Aka Brain Games",
   "scripts": {
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "watch": "npm run build -- --watch",
     "prepublishOnly": "npm run build",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "test": "npm run build && mocha -u tdd --colors 'dist/**/*.specs.js'"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -37,9 +38,11 @@
     "babel-eslint": "^8.2.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0"
+    "eslint-plugin-import": "^2.13.0",
+    "mocha": "^5.2.0"
   },
   "dependencies": {
     "readline-sync": "^1.4.9"
