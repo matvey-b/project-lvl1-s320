@@ -3,9 +3,10 @@ import calc from './games/calc';
 import even from './games/even';
 import gcdGame from './games/gcd';
 import balance from './games/balance';
+import progression from './games/progression';
 
 const games = {
-  calc, even, gcd: gcdGame, balance,
+  calc, even, gcd: gcdGame, balance, progression,
 };
 
 const countOfQuestions = 3;

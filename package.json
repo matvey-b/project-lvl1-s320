@@ -1,6 +1,6 @@
 {
   "name": "hexlet-brain-games-matvey-b",
-  "version": "0.5.8",
+  "version": "0.6.0",
   "description": "Mini dictionary of CLI games. Aka Brain Games",
   "scripts": {
     "babel-node": "babel-node",
@@ -11,11 +11,12 @@
     "test": "npm run build && mocha -u tdd --colors --timeout 9999 'dist/**/*.specs.js'"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-balance": "dist/bin/brain-balance.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-balance": "dist/bin/brain-balance.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "files": [
     "dist"
