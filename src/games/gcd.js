@@ -1,3 +1,4 @@
+import runGame from '../runGame';
 import { getRandomInt, isEven } from '../utils';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -28,7 +29,7 @@ export const gcd = (m, n) => {
   return iter(m < n ? m : n);
 };
 
-const run = () => {
+const makeGameData = () => {
   const x = getRandomInt(0, 100);
   const y = getRandomInt(0, 100);
 
@@ -38,7 +39,4 @@ const run = () => {
   };
 };
 
-export default {
-  description,
-  run,
-};
+export default () => runGame({ description, makeGameData });

@@ -1,3 +1,4 @@
+import runGame from '../runGame';
 import { isEven, getRandomInt } from '../utils';
 
 const description = 'Balance the given number.';
@@ -28,7 +29,7 @@ export const balanceNum = (num) => {
     const sumOfNums = digits[0] + digits[lastIdx];
     const minNum = Math.floor(sumOfNums / 2);
     const maxNum = isEven(sumOfNums) ? minNum : minNum + 1;
-    const result = digits;
+    const result = [...digits];
     result[0] = minNum;
     result[lastIdx] = maxNum;
     return iter(result.sort());
@@ -36,7 +37,7 @@ export const balanceNum = (num) => {
   return iter(numsArray).join('');
 };
 
-const run = () => {
+const makeGameData = () => {
   const question = getRandomInt(0, 9999);
   return {
     question,
@@ -44,7 +45,4 @@ const run = () => {
   };
 };
 
-export default {
-  run,
-  description,
-};
+export default () => runGame({ makeGameData, description });

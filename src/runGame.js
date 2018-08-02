@@ -1,30 +1,29 @@
 import readlineSync from 'readline-sync';
-import calc from './games/calc';
-import even from './games/even';
-import gcdGame from './games/gcd';
-import balance from './games/balance';
-import progression from './games/progression';
-
-const games = {
-  calc, even, gcd: gcdGame, balance, progression,
-};
 
 const countOfQuestions = 3;
 const greeting = 'Welcome to the Brain Games!';
+const isDebug = () => process.env.DEBUG;
 
-const gameEngine = (game) => {
+/**
+* @param {{description: string, makeGameData: function}} game
+* @return {void}
+*/
+const runGame = (game) => {
   console.log(greeting);
   console.log(game.description, '\n');
-  const userName = readlineSync.question('May I have your name? ', { defaultInput: 'Human' });
+  const userName = isDebug() ? 'Human' : readlineSync.question('May I have your name? ', { defaultInput: 'Human' });
   console.log(`Hello, ${userName}!!!\n`);
 
   for (let i = 1; i <= countOfQuestions; i += 1) {
-    const { question, correctAnswer } = game.run();
+    const { question, correctAnswer } = game.makeGameData();
     console.log('Question: ', question);
-    if (process.env.DEBUG) {
-      console.log('hint: ', correctAnswer);
+    let userAnswer;
+    if (isDebug()) {
+      console.log('Your answer: ', correctAnswer);
+      userAnswer = correctAnswer;
+    } else {
+      userAnswer = readlineSync.question('Your answer: ');
     }
-    const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
@@ -35,7 +34,5 @@ const gameEngine = (game) => {
 
   console.log(`Congratulations, ${userName}!`);
 };
-
-const runGame = gameName => gameEngine(games[gameName]);
 
 export default runGame;

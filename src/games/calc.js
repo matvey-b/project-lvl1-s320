@@ -1,3 +1,4 @@
+import runGame from '../runGame';
 import { getRandomInt } from '../utils';
 
 const description = 'What is the result of the expression?';
@@ -18,7 +19,4 @@ const calc = () => {
   return { question, correctAnswer };
 };
 
-export default {
-  run: calc,
-  description,
-};
+export default () => runGame({ makeGameData: calc, description });
