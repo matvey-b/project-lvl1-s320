@@ -1,5 +1,6 @@
-/* eslint prefer-arrow-callback: "off" */
 /* eslint func-names: "off" */
+/* eslint prefer-arrow-callback: "off" */
+/* eslint import/no-extraneous-dependencies: "off" */
 
 import { assert } from 'chai';
 import { balanceNum } from './balance';

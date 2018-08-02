@@ -1,6 +1,6 @@
 {
   "name": "hexlet-brain-games-matvey-b",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Mini dictionary of CLI games. Aka Brain Games",
   "scripts": {
     "babel-node": "babel-node",
