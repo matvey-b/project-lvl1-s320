@@ -3,7 +3,7 @@
 /* eslint import/no-extraneous-dependencies: "off" */
 
 import { assert } from 'chai';
-import { getRandomInt, times } from './utils';
+import { getRandomInt, times, immutableSort } from './utils';
 
 describe('utils tests', () => {
   describe('times', function () {
@@ -42,6 +42,20 @@ describe('utils tests', () => {
       const maxVal = 50;
       const actual = times(10000, () => getRandomInt(minVal, maxVal));
       assert.includeMembers(actual, [minVal, maxVal]);
+    });
+  });
+
+  describe('immutableSort', function () {
+    it('immutableSort([3, 2, 1]) === [1, 2, 3]', function () {
+      assert.sameOrderedMembers(immutableSort([3, 2, 1]), [1, 2, 3]);
+    });
+    it('immutableSort([3, 5, 2, 5, 1, 6, 1, 1, 0]) === [0, 1, 1, 1, 2, 3, 5, 5, 6]', function () {
+      assert.sameOrderedMembers(
+        immutableSort([3, 5, 2, 5, 1, 6, 1, 1, 0]), [0, 1, 1, 1, 2, 3, 5, 5, 6],
+      );
+    });
+    it('immutableSort([]) === []', function () {
+      assert.sameOrderedMembers(immutableSort([]), []);
     });
   });
 });

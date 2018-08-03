@@ -32,10 +32,10 @@ describe('GCD Game tests', function () {
   });
   describe('algorithms comparison', function () {
     it('1M calls of simple gcd', function () {
-      times(1000000, () => gcd(getRandomInt(0, 1000), getRandomInt(0, 1000)));
+      times(100000, () => gcd(getRandomInt(0, 1000), getRandomInt(0, 1000)));
     });
     it('1M calls of binary gcd', function () {
-      times(1000000, () => gcdBinary(getRandomInt(0, 1000), getRandomInt(0, 1000)));
+      times(100000, () => gcdBinary(getRandomInt(0, 1000), getRandomInt(0, 1000)));
     });
   });
 });

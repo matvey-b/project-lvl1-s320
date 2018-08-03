@@ -1,5 +1,5 @@
 import runGame from '../runGame';
-import { isEven, getRandomInt } from '../utils';
+import { isEven, getRandomInt, immutableSort } from '../utils';
 
 const description = 'Balance the given number.';
 
@@ -29,10 +29,8 @@ export const balanceNum = (num) => {
     const sumOfNums = digits[0] + digits[lastIdx];
     const minNum = Math.floor(sumOfNums / 2);
     const maxNum = isEven(sumOfNums) ? minNum : minNum + 1;
-    const result = [...digits];
-    result[0] = minNum;
-    result[lastIdx] = maxNum;
-    return iter(result.sort());
+    const result = [minNum, ...digits.slice(1, lastIdx), maxNum];
+    return iter(immutableSort(result));
   };
   return iter(numsArray).join('');
 };

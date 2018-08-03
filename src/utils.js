@@ -9,3 +9,14 @@ export const times = (n, func) => {
   }
   return result;
 };
+
+
+export const immutableSort = (list) => {
+  const left = (x, rest) => rest.filter(val => val <= x);
+  const right = (x, rest) => rest.filter(val => val > x);
+  const sort = (x, rest) => [].concat(
+    immutableSort(left(x, rest)), [x], immutableSort(right(x, rest)),
+  );
+
+  return !list.length ? [] : sort(list[0], list.slice(1));
+};
