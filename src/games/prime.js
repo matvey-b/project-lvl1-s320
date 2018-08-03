@@ -5,13 +5,8 @@ const description = 'Is this number prime?';
 
 export const isPrime = (x) => {
   if (x <= 1) return false;
-
-  const iter = (num = x - 1) => {
-    if (num <= 1) return x;
-    return x % num === 0 ? num : iter(num - 1);
-  };
-
-  return iter() === x;
+  const iter = num => (x % num === 0 ? num : iter(num + 1));
+  return iter(2) === x;
 };
 
 const makeGameData = () => {
