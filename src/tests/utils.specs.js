@@ -1,9 +1,19 @@
 /* eslint func-names: "off" */
 /* eslint prefer-arrow-callback: "off" */
+/* eslint import/prefer-default-export: "off" */
 /* eslint import/no-extraneous-dependencies: "off" */
 
 import { assert } from 'chai';
-import { getRandomInt, times, immutableSort } from './utils';
+import { getRandomInt } from '../utils';
+import { immutableSort } from '../games/balance';
+
+export const times = (n, func) => {
+  const result = [];
+  for (let i = 0; i < n; i += 1) {
+    result.push(func());
+  }
+  return result;
+};
 
 describe('utils tests', () => {
   describe('times', function () {

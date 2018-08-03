@@ -3,7 +3,7 @@
 /* eslint import/no-extraneous-dependencies: "off" */
 
 import { assert } from 'chai';
-import { balanceNum } from './balance';
+import { balanceNum } from '../games/balance';
 
 describe('Balance Game tests', function () {
   describe('balanceNum tests', function () {

@@ -1,7 +1,17 @@
 import runGame from '../runGame';
-import { isEven, getRandomInt, immutableSort } from '../utils';
+import { isEven, getRandomInt } from '../utils';
 
 const description = 'Balance the given number.';
+
+export const immutableSort = (list) => {
+  const left = (x, rest) => rest.filter(val => val <= x);
+  const right = (x, rest) => rest.filter(val => val > x);
+  const sort = (x, rest) => [].concat(
+    immutableSort(left(x, rest)), [x], immutableSort(right(x, rest)),
+  );
+
+  return !list.length ? [] : sort(list[0], list.slice(1));
+};
 
 const isBalanced = (digitsSequence) => {
   const iter = (digits) => {

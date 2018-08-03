@@ -3,8 +3,9 @@
 /* eslint import/no-extraneous-dependencies: "off" */
 
 import { assert } from 'chai';
-import { gcd, gcdBinary } from './gcd';
-import { times, getRandomInt } from '../utils';
+import { times } from './utils.specs';
+import { getRandomInt } from '../utils';
+import { gcd, gcdBinary } from '../games/gcd';
 
 describe('GCD Game tests', function () {
   describe('gcd', function () {
