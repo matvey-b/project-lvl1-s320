@@ -8,7 +8,7 @@ export const isPrime = (x) => {
 
   const iter = (num = x - 1) => {
     if (num <= 1) return x;
-    return x % num === 0 ? false : iter(num - 1);
+    return x % num === 0 ? num : iter(num - 1);
   };
 
   return iter() === x;
